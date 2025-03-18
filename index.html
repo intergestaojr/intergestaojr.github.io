@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>InterGestão JR</title>
+
+    <!-- Favicon -->
+    <link href="assets/img/favicon.png" rel="icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="index.css" type="text/css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <img src="assets/img/favicon.png" alt="Logo" class="nav-logo">
+                <h1 class="h1_nav">InterGestão JR</h1>
+            </div>
+            <ul class="ul_navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Quem Somos</a></li>
+                <li><a href="#projetos">Serviços</a></li>
+                <li><a href="#contato">Faça Parte</a></li>
+            </ul>
+            <div class="menu-mobile">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slide active" style="background-image: url('assets/img/banner_01.jpg')">
+            <div class="hero-text">
+                <h1>InterGestão Jr</h1>
+                <p>Soluções inovadoras para seu negócio</p>
+            </div>
+            <div class="hero-content">
+                <a href="#contato" class="cta-button">Entre em Contato</a>
+            </div>
+        </div>
+        <div class="slide" style="background-image: url('assets/img/banner_02.jpg')">
+            <div class="hero-text">
+                <h1>Consultoria para seu negócio</h1>
+                <span class="and-symbol">&</span>
+                <h2>Soluções Digitais</h2>
+            </div>
+        </div>
+        
+        <button class="carousel-btn prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="carousel-btn next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <div class="carousel-indicators">
+            <span class="indicator active"></span>
+            <span class="indicator"></span>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2 class="section-title">Quem Somos</h2>
+            <div class="sobre-content">
+                <div class="texto">
+                    <p class="destaque">Somos a InterGestão Jr., uma empresa júnior formada por estudantes dos cursos de Gestão em Tecnologia da Informação e Gestão Comercial. Oferecemos soluções personalizadas e inovadoras na área de tecnologia, sempre com foco na qualidade e na satisfação do cliente.</p>
+                    
+                    <p class="destaque">Nossos serviços, realizados por futuros profissionais, são supervisionados por especialistas e têm um custo mais acessível do que o mercado, já que todo o valor arrecadado é reinvestido na nossa equipe e em novos projetos.</p>
+                    
+                    <p class="destaque">Ao contratar a InterGestão Jr., você não apenas adquire soluções tecnológicas de ponta, mas também investe no desenvolvimento de talentos e contribui para a formação de futuros líderes do mercado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="projetos" class="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="cards-grid">
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fa fa-utensils"></i>
+                    </div>
+                    <h3>Cardápio Online</h3>
+                    <p>Cardápio acessivel via QR Code, praticidade, segurança e atualizações instantâneas no celular de seus clientes!.</p>
+                </div>
+                <div class="service-card">
+                    <div class="card-icon">
+                        <i class="fa fa-briefcase"></i>
+                    </div>
+                    <h3>Consultoria Comercial para seu negócio</h3>
+                    <p>Precificação estratégica que impulsiona resultados: lucratividade certa e competitividade elevada para o seu negócio!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2 class="section-title">Faça Parte</h2>
+            <div class="contato-content">
+                <p>Buscando desafios e oportunidades para crescer profissionalmente? Na InterGestão Jr., você terá a chance de trabalhar em equipe, desenvolver projetos inovadores e construir uma rede de contatos sólida. Se você é proativo, criativo e apaixonado por tecnologia, venha fazer parte do nosso time!</p>
+                <a href="forms_inscricao.html" class="btn-inscricao">
+                    Fazer Inscrição
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.instagram.com/intergestaojr/" target="_blank" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    Siga-nos no Instagram
+                </a>
+                <p>&copy; 2024 Inter Gestão JR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/index.js"></script>
+    
+</body>
+
+</html>

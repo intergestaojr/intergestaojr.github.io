@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate-se - InterGestão</title>
+    <link href="assets/img/favicon.png" rel="icon">
+</head>
+<style>
+    /* Definição das fontes e cores */
+:root {
+    --azul_padrao:#004AAD;
+    --azul_claro:#1F6FF5;
+    --laranja:#FF4D1D;
+    --fonte-titulos: 'Montserrat', sans-serif;
+    --fonte-texto: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte-texto);
+    background-color: #f8f9fa;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--azul_padrao);
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo img {
+    height: 35px;
+    filter: brightness(0) invert(1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--laranja);
+}
+
+/* Formulário */
+.form-section {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    padding: 2rem;
+}
+
+.form-section h1 {
+    color: var(--azul_padrao);
+    font-family: var(--fonte-titulos);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.candidate-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--azul_padrao);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: var(--fonte-texto);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--azul_claro);
+}
+
+button[type="submit"] {
+    background-color: var(--azul_padrao);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fonte-texto);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--laranja);
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .form-section {
+        margin: 80px 20px 30px;
+        padding: 1rem;
+    }
+
+    .form-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .candidate-form {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-section h1 {
+        font-size: 1.3rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 0.6rem;
+    }
+
+    button[type="submit"] {
+        padding: 0.8rem 1.5rem;
+    }
+}
+</style>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="../../index.html">
+                    <img src="assets/img/favicon.png" alt="Logo InterGestão">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h1>Candidate-se para fazer parte da InterGestão</h1>
+            <form class="candidate-form" 
+                action="https://script.google.com/macros/s/AKfycbzPttssCqzLaWrQLkxPWA20arvX6pIHxPKcX_h0f5OHrHMpaD2DVMTtR1OUR5G_FWU4/exec" 
+                method="POST"
+                enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="nome">Nome Completo*</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefone">Telefone Whatsapp*</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="curso">Curso*</label>
+                    <input type="text" id="curso" name="curso" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="periodo">Semestre*</label>
+                    <select id="periodo" name="periodo" required>
+                        <option value="0" disabled selected>Selecione um semestre</option>
+                        <option value="1">1º semestre</option>
+                        <option value="2">2º semestre</option>
+                        <option value="3">3º semestre</option>
+                        <option value="4">4º semestre</option>
+                        <option value="5">5º semestre ou superior</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="motivacao">Nos conte um pouco sobre você e por que deseja fazer parte da InterGestão?*</label>
+                    <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="cv">Anexe seu Currículo (PDF)</label>
+                    <input type="file" id="cv" name="cv" accept=".pdf" >
+                </div>
+
+                <button type="submit" class="submit-btn">Enviar Candidatura</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 InterGestão. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
