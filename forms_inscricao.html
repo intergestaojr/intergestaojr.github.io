@@ -133,6 +133,34 @@ button[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
+/* Mensagem de Status */
+.status-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.status-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.status-message.success {
+    background-color: #28a745;
+}
+
+.status-message.error {
+    background-color: #dc3545;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .navbar {
@@ -192,7 +220,7 @@ button[type="submit"]:hover {
     <main>
         <section class="form-section">
             <h1>Candidate-se para fazer parte da InterGestão</h1>
-            <form class="candidate-form" 
+            <form id="candidateForm" class="candidate-form" 
                 action="https://script.google.com/macros/s/AKfycbzPttssCqzLaWrQLkxPWA20arvX6pIHxPKcX_h0f5OHrHMpaD2DVMTtR1OUR5G_FWU4/exec" 
                 method="POST"
                 enctype="multipart/form-data">
@@ -241,12 +269,55 @@ button[type="submit"]:hover {
                 <button type="submit" class="submit-btn">Enviar Candidatura</button>
             </form>
         </section>
+
+        <div id="statusMessage" class="status-message"></div>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2023 InterGestão. Todos os direitos reservados.</p>
+            <p>&copy; 2019 InterGestão. Todos os direitos reservados.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('candidateForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const statusMessage = document.getElementById('statusMessage');
+            const submitBtn = form.querySelector('button[type="submit"]');
+        
+            try {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'Enviando...';
+        
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                });
+        
+                const result = await response.json();
+        
+                if (result.result === 'success') {
+                    statusMessage.classList.add('success', 'show');
+                    statusMessage.textContent = 'Candidatura enviada com sucesso!';
+                    form.reset();
+                } else {
+                    throw new Error(result.error || 'Erro desconhecido');
+                }
+            } catch (error) {
+                statusMessage.classList.add('error', 'show');
+                statusMessage.textContent = `Erro ao enviar: ${error.message}`;
+                console.error('Erro:', error);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Enviar Candidatura';
+                
+                setTimeout(() => {
+                    statusMessage.classList.remove('show', 'success', 'error');
+                }, 5000);
+            }
+        });
+        </script>
 </body>
 </html>
