@@ -221,7 +221,7 @@ button[type="submit"]:hover {
         <section class="form-section">
             <h1>Candidate-se para fazer parte da InterGestão</h1>
             <form id="candidateForm" class="candidate-form" 
-                action="https://script.google.com/macros/s/AKfycbzPttssCqzLaWrQLkxPWA20arvX6pIHxPKcX_h0f5OHrHMpaD2DVMTtR1OUR5G_FWU4/exec" 
+                action="https://script.google.com/macros/s/AKfycbwUwnsYaQHFIfbPAQE5lKcGlp_HMAmzebmpJ1pZREXvBbuvSR1o14Y57AJceLO4SPUn/exec" 
                 method="POST"
                 enctype="multipart/form-data">
                 <div class="form-group">
@@ -230,7 +230,12 @@ button[type="submit"]:hover {
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mail*</label>
+                    <label for="date">Data de nascimento*</label>
+                    <input type="text" id="date" name="date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail pessoal*</label>
                     <input type="email" id="email" name="email" required>
                 </div>
 
@@ -240,30 +245,40 @@ button[type="submit"]:hover {
                 </div>
 
                 <div class="form-group">
-                    <label for="curso">Curso*</label>
-                    <input type="text" id="curso" name="curso" required>
-                </div>
-
-                <div class="form-group">
                     <label for="periodo">Semestre*</label>
                     <select id="periodo" name="periodo" required>
                         <option value="0" disabled selected>Selecione um semestre</option>
-                        <option value="1">1º semestre</option>
-                        <option value="2">2º semestre</option>
-                        <option value="3">3º semestre</option>
-                        <option value="4">4º semestre</option>
-                        <option value="5">5º semestre ou superior</option>
+                        <option value="1º semestre">1º semestre</option>
+                        <option value="2º semestre">2º semestre</option>
+                        <option value="3º semestre">3º semestre</option>
+                        <option value="4º semestre">4º semestre</option>
+                        <option value="5º semestre">5º semestre</option>
+                        <option value="6º semestre">6º semestre</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="motivacao">Nos conte um pouco sobre você e por que deseja fazer parte da InterGestão?*</label>
-                    <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
+                    <label for="curso">Qual curso esta graduando?*</label>
+                    <select id="curso" name="curso" required>
+                        <option value="0" disabled selected>Selecione seu curso</option>
+                        <option value="GCOM">Gestão Comercial (GCom).</option>
+                        <option value="GTI">Gestão da Tecnologia da Informação (GTI).</option>
+                    </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="cv">Anexe seu Currículo (PDF)</label>
-                    <input type="file" id="cv" name="cv" accept=".pdf" >
+                    <label for="pergunta1">Por que você quer entrar na InterGestão Jr.?*</label>
+                    <input type="text" id="pergunta1" name="pergunta1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pergunta2">Você já participou de algum projeto de voluntariado? Se sim, conte-nos como foi a experiência.*</label>
+                    <input type="text" id="pergunta2" name="pergunta2" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pergunta3">Como você organiza suas tarefas no dia a dia?*</label>
+                    <input type="text" id="pergunta3" name="pergunta3" required>
                 </div>
 
                 <button type="submit" class="submit-btn">Enviar Candidatura</button>
