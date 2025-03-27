@@ -47,6 +47,7 @@ section {
     background-color: var(--azul_claro);
     color: white;
     text-align: center;
+    margin-bottom: 60px; /* Adiciona espaço abaixo da hero section */
 }
 
 .carousel {
@@ -363,6 +364,11 @@ section {
 .sobre {
     padding: 8rem 0;
     background-color: #f8f9fa;
+    position: relative; /* Garante que a seção mantenha seu posicionamento no fluxo */
+    padding: 5rem 0; /* Reduzido de 8rem para 5rem */
+    background-color: #f8f9fa;
+    margin-top: 60px; /* Espaço adicional no topo */
+    z-index: 1; /* Garante que fique sobre outros elementos */
 }
 
 .section-title {
@@ -738,6 +744,8 @@ footer {
     .hero {
         height: 350px; /* Altura menor para mobile */
         margin-bottom: 20px; /* Espaço entre hero e próxima seção */
+        height: 400px; /* Altura fixa em vez de vh */
+        margin-bottom: 30px; /* Menor espaço em telas menores */
     }
     
     .carousel-btn {
@@ -793,6 +801,8 @@ footer {
         padding: 6rem 0;
         padding-top: 2rem; /* Reduzido de 5rem */
         margin-top: 0; /* Remove margem superior */
+        padding: 3rem 0; /* Reduz padding */
+        margin-top: 30px; /* Ajusta margin */
     }
 
     .section-title {
@@ -884,6 +894,8 @@ footer {
 
     .hero {
         height: 300px;
+        height: 350px; /* Ainda menor para telas pequenas */
+        margin-bottom: 20px;
     }
     
     .hero-content {
@@ -925,6 +937,8 @@ footer {
 
     .sobre {
         padding-top: 1.5rem;
+        padding: 2rem 0;
+        margin-top: 20px;
     }
     
     .section-title {
